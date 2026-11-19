@@ -1,0 +1,30 @@
+body{
+    font-family: Verdana, sans-serif;
+    background-color: #D4F1F4;
+    color: #05445E;
+}
+
+.main-login{
+    width: 50em;
+    margin: auto;
+    padding: 20px;
+}
+
+footer{
+    text-align: right;
+
+}
+
+header{
+    margin: 40px;
+}
+
+div:has(> table){
+    margin: 40px;
+    padding: 20px;
+}
+
+.main-login, header, div:has(> table){
+    background-color: #75E6DA;
+    border-radius: 5px;
+}
