@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="styl.css">
 </head>
 <body>
+    <?php
+        session_start();
+    ?>
     <header>
         <h1>Portal laboratorium</h1>
     </header>
@@ -18,8 +21,16 @@
             <br>
             <label for="password">Hasło: </label>
             <input type="password" name="haslo" placeholder="Wpisz hasło">
-            <button type="submit">Zaloguj</button>
+            <button name="submit" type="submit">Zaloguj</button>
         </form>
+        <?php
+            if(isset($_POST['submit'])){
+                if($_POST['login'] == 'admin' and $_POST['haslo'] == 'TajneHaslo321*'){
+                    $_SESSION['login'] = 'admin';
+                    header('location: wyniki.php');
+                }
+            }
+        ?>
     </main>
     <footer>
         <p>Wykonał: numer_zdającego</p>
