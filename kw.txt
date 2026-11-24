@@ -1,0 +1,31 @@
+kw1:
+
+SELECT imie, nazwisko from diagnosta
+ORDER BY nazwisko DESC
+
+kw2:
+
+SELECT DATE(data) AS data, COUNT(*) AS liczba_zlecen from zlecenie
+GROUP BY date(data)
+ORDER BY date(data)
+
+kw3:
+
+select data from zlecenie
+join pacjent
+on zlecenie.idPacjenta = pacjent.id
+where nazwisko = "Nowicki"
+
+kw4:
+SELECT 
+    pacjent.imie,
+    pacjent.nazwisko,
+    pacjent.pesel,
+    zlecenie.data,
+    wynik.data,
+    wynik.plik
+FROM pacjent
+JOIN zlecenie
+    ON pacjent.id = zlecenie.idPacjenta
+LEFT JOIN wynik
+    ON zlecenie.id = wynik.idZlecenia;
